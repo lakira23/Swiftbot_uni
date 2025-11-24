@@ -8,46 +8,43 @@ import swiftbot.SwiftBotAPI;
 //Interact with LEDController for start & end celebration lights
 
 public class MovementController {
-	 SwiftBotAPI swiftBot = SwiftBotAPI.INSTANCE;
+	 static SwiftBotAPI swiftBot = SwiftBotAPI.INSTANCE;
 	
 	public static void main(String[] args) {
-		celebration_movement(5);
-//		celebration_movement(45);
-//		celebration_movement(25);
+		celebration_movement(5);		
 	}
 	public static void celebration_movement(int score){
-		//speed = distance * time
-		//time = speed / distance
-		//distance = 30 cm --> 0.3m, 
-		//speed = score * 10 
-		//if  score < 5: speeed = 40
-		//if score>40: speed = 40
+		int bot_power = score * 10;
 		
-		int speed = score * 10;
-		
-		if (score < 5) {
-			speed = 40;
+		if (score >= 10) {
+			bot_power = 100;
 		}
-		else if (score >= 10) {
-			speed = 100;
+		else if (score < 5) {
+			bot_power = 40;
 		}
+		double bot_speed = bot_power * 0.4212;
+		v_movement(bot_power, bot_speed);
+	}
+	
+	private static void v_movement(int power, double speed) {
+		System.out.println(power + " < power " + speed + " < speed" );
+		//30cm
+		// v = s/t
+		//t = s/v
 		
-		System.out.println("speed" + speed);
-		double time = speed / 0.3 ;
-		SwiftBotAPI.INSTANCE.move(50,70,2000);
-		System.out.println("time double " + time);
-		//used chatgbt to figure out a ratio which links with the velocity, the angle which the robot should move in based on the distance between the two wheels:
+		double time = (30 / speed) * 1000;
 		
-		v_movement(speed, (int)time * 1000);
+		System.out.println("time > " + time);
+		
+		swiftBot.move(-50, 50, 500); //golden
+		swiftBot.move(power, power, (int) time);
+		swiftBot.move(-power, -power, (int) time);
+		swiftBot.move(50, -50, 500);
+		swiftBot.move(power, power, (int) time);
+		swiftBot.move(-power, -power, (int) time);
+		swiftBot.move(-50, 50, 250);
 		
 	}
 	
-	private static void v_movement(int speed, int time) {
-		System.out.println("time int " + time);
-		//swiftBot.move(-45, 45, 200 ); //make the robot diagonal
-//		swiftBot.move(speed,speed, time);
-//		swiftBot.move(-speed, -speed, time);
-		
-	}
 
 }

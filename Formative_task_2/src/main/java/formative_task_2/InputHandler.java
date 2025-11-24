@@ -1,7 +1,6 @@
 package formative_task_2;
 
 import java.util.ArrayList;
-
 import swiftbot.Button;
 import swiftbot.SwiftBotAPI;
 
