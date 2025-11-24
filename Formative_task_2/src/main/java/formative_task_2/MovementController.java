@@ -34,7 +34,7 @@ public class MovementController {
 		
 		System.out.println("speed" + speed);
 		double time = speed / 0.3 ;
-		SwiftBotAPI.INSTANCE.move
+		SwiftBotAPI.INSTANCE.move(50,70,2000);
 		System.out.println("time double " + time);
 		//used chatgbt to figure out a ratio which links with the velocity, the angle which the robot should move in based on the distance between the two wheels:
 		

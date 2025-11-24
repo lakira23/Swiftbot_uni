@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class DoesMySwiftBotWork {
 	static SwiftBotAPI swiftBot;
-	// ANSI color codes
+	//ANSI colour codes
 	static final String RESET = "\u001B[0m";
 	static final String CYAN = "\u001B[36m";
 	static final String YELLOW = "\u001B[33m";
