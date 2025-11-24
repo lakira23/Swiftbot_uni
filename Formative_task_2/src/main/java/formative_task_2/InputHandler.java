@@ -16,17 +16,20 @@ public class InputHandler {
 			swiftBot.enableButton(Button.B, () -> {userinput.add("Blue");});
 			swiftBot.enableButton(Button.X, () -> {userinput.add("Green");});
 			swiftBot.enableButton(Button.Y, () -> {userinput.add("White");});
-
 		}
 
 		catch (Exception e) {
 			System.out.println("please enter a correct key!!");
 		}
+		
 	}
 	
 	public static void reset_input_handler() {
 		userinput.clear();
 	}
 	
+	public ArrayList<String> get_userinput() {
+		return userinput;
+	}
 	
 }
