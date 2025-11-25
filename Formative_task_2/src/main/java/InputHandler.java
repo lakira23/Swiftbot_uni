@@ -1,4 +1,4 @@
-package formative_task_2;
+
 
 import java.util.ArrayList;
 import swiftbot.Button;
@@ -8,7 +8,7 @@ public class InputHandler {
 	static SwiftBotAPI swiftBot = SwiftBotAPI.INSTANCE;
 	static ArrayList<String> userinput = new ArrayList<String>();
 
-	public static void main (String[] args) {
+	public static void start_InputHandle() {
 
 		try {
 			swiftBot.enableButton(Button.A, () -> {userinput.add("Red");});

@@ -1,4 +1,4 @@
-package formative_task_2;
+
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -12,7 +12,6 @@ import swiftbot.*;
 
 public class LEDController {
 	static SwiftBotAPI swiftBot = SwiftBotAPI.INSTANCE;
-
 
 	static int[][] colours_int = {
 			{ 255, 0, 0 }, // Red
@@ -30,7 +29,7 @@ public class LEDController {
 
 	static HashMap<String, int[]> colour_map = new HashMap<>();
 
-	public static void main(String[] args) throws InterruptedException {
+	public static void start_LEDController() throws InterruptedException {
 
 		for (int i = 0; i < 4 ; i++) {
 			colour_map.put(colours_str[i][0], colours_int[i]);

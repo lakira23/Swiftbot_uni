@@ -1,4 +1,3 @@
-package formative_task_2;
 
 import swiftbot.SwiftBotAPI;
 
@@ -10,9 +9,6 @@ import swiftbot.SwiftBotAPI;
 public class MovementController {
 	 static SwiftBotAPI swiftBot = SwiftBotAPI.INSTANCE;
 	
-	public static void main(String[] args) {
-		celebration_movement(5);		
-	}
 	public static void celebration_movement(int score){
 		int bot_power = score * 10;
 		
