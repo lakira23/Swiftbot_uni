@@ -11,14 +11,22 @@ public class InputHandler {
 	public static void start_InputHandle() {
 
 		try {
-			swiftBot.enableButton(Button.A, () -> {userinput.add("Red");});
-			swiftBot.enableButton(Button.B, () -> {userinput.add("Blue");});
-			swiftBot.enableButton(Button.X, () -> {userinput.add("Green");});
-			swiftBot.enableButton(Button.Y, () -> {userinput.add("White");});
+			swiftBot.disableButton(Button.A);
+			swiftBot.disableButton(Button.B);
+			swiftBot.disableButton(Button.X);
+			swiftBot.disableButton(Button.Y);
+
+			swiftBot.enableButton(Button.A, () -> {userinput.add("Red"); System.out.println("red been pressed");});
+			swiftBot.enableButton(Button.B, () -> {userinput.add("Blue"); System.out.println("blue been pressed");});
+			swiftBot.enableButton(Button.X, () -> {userinput.add("Green"); System.out.println("green been pressed");});
+			swiftBot.enableButton(Button.Y, () -> {userinput.add("White"); System.out.println("white been pressed");});
+
+
 		}
 
 		catch (Exception e) {
 			System.out.println("please enter a correct key!!");
+			
 		}
 		
 	}
@@ -27,8 +35,10 @@ public class InputHandler {
 		userinput.clear();
 	}
 	
-	public ArrayList<String> get_userinput() {
+	public static ArrayList<String> get_userinput() {
 		return userinput;
 	}
+
+	}
 	
-}
+

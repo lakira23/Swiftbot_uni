@@ -7,11 +7,10 @@ public class SequenceManager {
 	
 	
 	public static void AddRandomColour () {
-		String[] colours = {"red","blue","green","white"};
+		String[] colours = {"Red","Blue","Green","White"};
 		Random rand = new Random();
 		String randomColour = colours[rand.nextInt(colours.length)];
-		System.out.println(randomColour);
-		
+				
 		sequence.add(randomColour);
 	}
 	
