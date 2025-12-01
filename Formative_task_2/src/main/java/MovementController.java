@@ -1,10 +1,4 @@
-
 import swiftbot.SwiftBotAPI;
-
-//Calculate speed using the formula
-//Move in a V shape (two 30cm arms)
-//Ensure movement uses correct speed logic
-//Interact with LEDController for start & end celebration lights
 
 public class MovementController {
 	 static SwiftBotAPI swiftBot = SwiftBotAPI.INSTANCE;
@@ -23,16 +17,10 @@ public class MovementController {
 	}
 	
 	private static void v_movement(int power, double speed) {
-		System.out.println(power + " < power " + speed + " < speed" );
-		//30cm
-		// v = s/t
-		//t = s/v
 		
 		double time = (30 / speed) * 1000;
 		
-		System.out.println("time > " + time);
-		
-		swiftBot.move(-50, 50, 500); //golden
+		swiftBot.move(-50, 50, 500);
 		swiftBot.move(power, power, (int) time);
 		swiftBot.move(-power, -power, (int) time);
 		swiftBot.move(50, -50, 500);

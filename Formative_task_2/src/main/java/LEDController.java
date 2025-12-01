@@ -1,15 +1,9 @@
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
 import swiftbot.SwiftBotAPI;
-
-
-//Light/blink the correct LED for a colour
-//Display the full sequence
-//Flash random celebration colours
 
 public class LEDController {
 	static SwiftBotAPI swiftBot = SwiftBotAPI.INSTANCE;
@@ -35,9 +29,7 @@ public class LEDController {
 			
 			int[] current_colour = colour_map.get(colour_Sequence.get(i));
 			
-			//System.out.println(current_colour); //gives the colour
-			
-			swiftBot.fillUnderlights(current_colour); //fills the underlight
+			swiftBot.fillUnderlights(current_colour);
 			
 			Thread.sleep(1000);
 		}

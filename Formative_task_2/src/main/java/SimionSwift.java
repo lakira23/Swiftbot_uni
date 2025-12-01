@@ -1,5 +1,4 @@
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 import swiftbot.SwiftBotAPI;
@@ -18,13 +17,15 @@ public class SimionSwift {
 			Scanner input = new Scanner(System.in);
 			while (lives >= 0 && game_status) {
 				level ++;
+
 				System.out.println("current score > "+ score);
 				System.out.println("currrent level > "+ level);
 				System.out.println("cuurent lives > "+ lives);
 
 				if (score % 5 == 0 && level != 1) {
+
 					System.out.println("Enter 'quit' if required to quit else 'continue'> ");
-					
+
 					String user_quit_input = input.next();
 
 					if (user_quit_input.equals("quit")) {
@@ -33,7 +34,7 @@ public class SimionSwift {
 						System.out.println("performing celebration dive! ");
 						MovementController.celebration_movement(score);
 						break;
-			 		}
+					}
 
 				} 
 
@@ -63,7 +64,7 @@ public class SimionSwift {
 				System.out.println("user input > "+ InputHandler.get_userinput());
 				InputHandler.get_userinput().equals(SequenceManager.Get_Sequence());
 				System.out.println("the sequence > "+ SequenceManager.Get_Sequence());
-				
+
 				if (InputHandler.get_userinput().equals(SequenceManager.Get_Sequence())) {
 					score ++;
 					System.out.println("Score incremented!!");
@@ -73,7 +74,7 @@ public class SimionSwift {
 					lives = lives - 1;
 					System.out.println("wrong sequnce");
 				}
-				
+				input.close();
 				InputHandler.reset_input_handler();
 			}
 		}
