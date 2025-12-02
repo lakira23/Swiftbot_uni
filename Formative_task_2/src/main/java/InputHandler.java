@@ -16,10 +16,10 @@ public class InputHandler {
 			swiftBot.disableButton(Button.X);
 			swiftBot.disableButton(Button.Y);
 
-			swiftBot.enableButton(Button.A, () -> {userinput.add("Red"); System.out.println("red been pressed");});
-			swiftBot.enableButton(Button.B, () -> {userinput.add("Blue"); System.out.println("blue been pressed");});
-			swiftBot.enableButton(Button.X, () -> {userinput.add("Green"); System.out.println("green been pressed");});
-			swiftBot.enableButton(Button.Y, () -> {userinput.add("White"); System.out.println("white been pressed");});
+			swiftBot.enableButton(Button.A, () -> {userinput.add("Red"); System.out.println("A been pressed");});
+			swiftBot.enableButton(Button.B, () -> {userinput.add("Blue"); System.out.println("B been pressed");});
+			swiftBot.enableButton(Button.X, () -> {userinput.add("Green"); System.out.println("X been pressed");});
+			swiftBot.enableButton(Button.Y, () -> {userinput.add("White"); System.out.println("Y been pressed");});
 
 
 		}
